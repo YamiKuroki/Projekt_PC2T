@@ -1,0 +1,13 @@
+package model;
+public class Specialista extends Zamestnanec {
+    public Specialista(int id, String jmeno, String prijmeni, int rok) {
+        super(id, jmeno, prijmeni, rok);
+        this.skupina = "Bezpecnostni specialista";
+    }
+
+    @Override
+    public void spustiDovednost() {
+        double skore = spolupracovnici.size() * 1.5;
+        System.out.println(">>> Specialista " + prijmeni + " vypočítal rizikové skóre: " + skore);
+    }
+}
