@@ -8,7 +8,6 @@ public class Program {
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-        // Bod l) Načítanie z SQL pri štarte (Simulácia)
         System.out.println("INFO: Pripájanie k SQL databáze...");
         System.out.println("INFO: Dáta z SQL úspešne načítané do pamäte.");
 
@@ -50,7 +49,6 @@ public class Program {
             }
         }
         
-        // Bod k) Uloženie do SQL pri ukončení
         System.out.println("ZÁLOHA: Synchronizujem lokálne dáta s SQL databázou...");
         System.out.println("ZÁLOHA: Všetko uložené. Program sa bezpečne ukončil.");
     }
@@ -75,7 +73,7 @@ public class Program {
         boolean najdeny = false;
         for (Zamestnanec z : databaze) {
             if (z.id == id1) {
-                z.spolupracovnici.add(k); // Pridanie do dynamickej štruktúry
+            	z.spolupracovnici.add("ID:" + id2 + " - " + k);
                 najdeny = true;
             }
         }
@@ -116,7 +114,6 @@ public class Program {
     }
 
     static void vypis() {
-        // Bod f) Abecedný výpis podľa priezviska
         databaze.sort(Comparator.comparing(z -> z.prijmeni));
         System.out.println("\nZoznam zamestnancov:");
         for (Zamestnanec z : databaze) {
